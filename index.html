@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventBloom | Local Decoration & Floral Aggregator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+  <a class="logo" href="#">Event<span>Bloom</span></a>
+  <nav>
+    <a href="#vendors">Vendors</a>
+    <a href="#how">How It Works</a>
+    <a href="#booking">Book</a>
+  </nav>
+  <a class="nav-btn" href="#booking">Get a Quote</a>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <p class="eyebrow">LOCAL EVENT DECORATION & FLORALS</p>
+    <h1>Make your event<br><span>beautiful & memorable.</span></h1>
+    <p class="hero-text">Discover trusted decorators and florists near you. Compare services, prices and ratings, then send one simple booking request.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#vendors">Explore Vendors</a>
+      <a class="btn secondary" href="#booking">Book a Service</a>
+    </div>
+  </div>
+</section>
+
+<section class="search-panel">
+  <div>
+    <label>Search</label>
+    <input id="searchInput" type="text" placeholder="Wedding, flowers, stage...">
+  </div>
+  <div>
+    <label>Category</label>
+    <select id="categoryFilter">
+      <option value="">All Categories</option>
+      <option>Wedding Decoration</option>
+      <option>Floral Decoration</option>
+      <option>Birthday Decoration</option>
+      <option>Stage Decoration</option>
+    </select>
+  </div>
+  <div>
+    <label>Location</label>
+    <select id="locationFilter">
+      <option value="">All Locations</option>
+      <option>Tirupati</option>
+      <option>Chittoor</option>
+      <option>Nellore</option>
+    </select>
+  </div>
+  <button class="btn primary" onclick="loadVendors()">Search</button>
+</section>
+
+<section id="vendors" class="section">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">FIND YOUR VENDOR</p>
+      <h2>Popular local services</h2>
+    </div>
+    <span id="vendorCount"></span>
+  </div>
+  <div id="vendorGrid" class="vendor-grid">
+    <p>Loading vendors...</p>
+  </div>
+</section>
+
+<section id="how" class="how section">
+  <div class="section-heading center">
+    <p class="eyebrow">SIMPLE PROCESS</p>
+    <h2>Plan your event in 3 steps</h2>
+  </div>
+  <div class="steps">
+    <div class="step"><b>01</b><h3>Explore</h3><p>Browse decorators and florists by service, location and budget.</p></div>
+    <div class="step"><b>02</b><h3>Compare</h3><p>Check ratings, pricing and service descriptions before choosing.</p></div>
+    <div class="step"><b>03</b><h3>Book</h3><p>Send your event details and receive a booking response.</p></div>
+  </div>
+</section>
+
+<section id="booking" class="booking section">
+  <div class="booking-info">
+    <p class="eyebrow">READY TO PLAN?</p>
+    <h2>Request a decoration quote</h2>
+    <p>Tell us about your event. Your request will be saved in the backend database for the vendor/admin to manage.</p>
+  </div>
+  <form id="bookingForm">
+    <div class="form-row">
+      <input name="customer_name" required placeholder="Your name">
+      <input name="phone" required placeholder="Phone number">
+    </div>
+    <div class="form-row">
+      <input name="email" type="email" placeholder="Email address">
+      <select name="event_type" required>
+        <option value="">Event type</option>
+        <option>Wedding</option>
+        <option>Birthday</option>
+        <option>Engagement</option>
+        <option>Reception</option>
+        <option>Corporate Event</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <input name="event_date" type="date" required>
+      <input name="location" required placeholder="Event location">
+    </div>
+    <select id="vendorSelect" name="vendor_id">
+      <option value="">Preferred vendor (optional)</option>
+    </select>
+    <textarea name="message" rows="4" placeholder="Tell us your theme, flower preference, approximate budget, etc."></textarea>
+    <button class="btn primary full" type="submit">Submit Booking Request</button>
+    <p id="formMessage"></p>
+  </form>
+</section>
+
+<footer>
+  <div><a class="logo" href="#">Event<span>Bloom</span></a><p>Local event decoration & floral marketplace.</p></div>
+  <p>© 2026 EventBloom</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
